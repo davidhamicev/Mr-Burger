@@ -1,0 +1,228 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'lifehackmedium';
+  src: url("../../../fonts/Lifehack/lifehack_medium-webfont.eot");
+  src: url("../../../fonts/Lifehack/lifehack_medium-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Lifehack/lifehack_medium-webfont.woff2") format("woff2"), url("../../../fonts/Lifehack/lifehack_medium-webfont.woff") format("woff"), url("../../../fonts/Lifehack/lifehack_medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'ubuntubold';
+  src: url("../../../../../fonts/Ubuntu/ubuntu/ubuntu-b-webfont.eot");
+  src: url("../../../fonts/Ubuntu/ubuntu-b-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Ubuntu/ubuntu-b-webfont.woff2") format("woff2"), url("../../../fonts/Ubuntu/ubuntu-b-webfont.woff") format("woff"), url("../../../fonts/Ubuntu/ubuntu-b-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'ubuntulight';
+  src: url("../../../fonts/Ubuntu/ubuntu-light-webfont.eot");
+  src: url("../../../fonts/Ubuntu/ubuntu-light-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Ubuntu/ubuntu-light-webfont.woff2") format("woff2"), url("../../../fonts/Ubuntu/ubuntu-light-webfont.woff") format("woff"), url("../../../fonts/Ubuntu/ubuntu-light-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'ubuntumedium';
+  src: url("../../../fonts/Ubuntu/ubuntu-medium-webfont.eot");
+  src: url("../../../fonts/Ubuntu/ubuntu-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Ubuntu/ubuntu-medium-webfont.woff2") format("woff2"), url("../../../fonts/Ubuntu/ubuntu-medium-webfont.woff") format("woff"), url("../../../fonts/Ubuntu/ubuntu-medium-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'ubunturegular';
+  src: url("../../../fonts/Ubuntu/ubuntu-regular-webfont.eot");
+  src: url("../../../fonts/Ubuntu/ubuntu-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Ubuntu/ubuntu-regular-webfont.woff2") format("woff2"), url("../../../fonts/Ubuntu/ubuntu-regular-webfont.woff") format("woff"), url("../../../fonts/Ubuntu/ubuntu-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gagalinregular';
+  src: url("../../../fonts/Gagalin/gagalin-regular-webfont.eot");
+  src: url("../../../fonts/Gagalin/gagalin-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Gagalin/gagalin-regular-webfont.woff2") format("woff2"), url("../../../fonts/Gagalin/gagalin-regular-webfont.woff") format("woff"), url("../../../fonts/Gagalin/gagalin-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: normal;
+  line-height: normal;
+  margin: 0px; }
+
+ul {
+  list-style-type: none; }
+
+* {
+  --moz-transition: all 0.3s ease;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease; }
+
+html {
+  font-size: 16px; }
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #fff; }
+
+/**** Header styles ****/
+.header {
+  min-width: 100%;
+  min-height: 100%;
+  background: url(../../../images/bg/intro-bg.jpg);
+  -webkit-background-size: cover;
+          background-size: cover;
+  position: relative; }
+  .header .container {
+    width: 940px;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .header .top-bar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 13px;
+    font-family: "ubuntumedium", Arial, sans-serif;
+    font-size: 0.750rem; }
+    .header .top-bar__nav {
+      text-transform: uppercase;
+      height: 100%;
+      width: 100%;
+      margin-bottom: 15px; }
+    .header .top-bar__inner_menu {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .header .top-bar__inner_menu .inner__menu_item a {
+        color: #fff;
+        text-align-last: left;
+        padding: 5px;
+        line-height: 2em;
+        margin-left: 10px; }
+      .header .top-bar__inner_menu .inner__menu_item a:hover {
+        color: #e77252; }
+      .header .top-bar__inner_menu .inner__menu_item a::before {
+        content: "•";
+        margin-right: 15px; }
+
+.btn__order {
+  background: #e45028;
+  padding: 11px 19px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  margin-bottom: 20px;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
+  .btn__order:hover {
+    background: #c1401e; }
+
+.wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .wrapper__title {
+    margin-right: auto;
+    margin-top: 43px;
+    margin-left: 12px; }
+    .wrapper__title_first {
+      font-family: "gagalinregular", Arial, sans-serif;
+      font-size: 4.5rem;
+      color: #f9b43b;
+      text-transform: uppercase;
+      line-height: 1.59em; }
+    .wrapper__title_second {
+      font-family: "lifehackmedium", Arial, sans-serif;
+      font-size: 3.875rem;
+      color: #fff;
+      text-transform: inherit;
+      line-height: 1em; }
+
+.activ-link__list {
+  position: absolute;
+  top: 80px;
+  right: 46px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  right: -23.5px;
+  top: 80px; }
+  .activ-link__list_item {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    margin-bottom: 16px; }
+
+.activ-item::after {
+  content: "";
+  position: absolute;
+  margin-top: -6px;
+  margin-left: -6px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  -webkit-border-radius: 50%;
+          border-radius: 50%; }
+
+.arrow-down {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-bottom: 40px; }
+
+/**** Header styles [End]****/
