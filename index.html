@@ -2,23 +2,24 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MrBurgers</title>
-  <link rel="stylesheet" href="styles/found/normalize.css">
-  <link rel="stylesheet" href="styles/main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MrBurgers</title>
+	<link rel="stylesheet" href="styles/found/normalize.css">
+	<link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-	<!---- Main screen ---->
-	<header class="header">
+	<div class="wrapper">
+		<!---- Main screen ---->
+		<header class="header">
 			<div class="container">
 				<div class="top-bar">
 					<a href="#" class="logo">
 						<img src="images/logo/logo.svg" alt="MrBurger" class="logo__img">
 					</a>
-	
+
 					<!---- Main menu ---->
 					<aside class="top-bar__nav">
 						<nav class="top-bar__inner">
@@ -47,28 +48,28 @@
 							</ul>
 						</nav>
 					</aside>
-	
+
 					<a href="#" class="btn__order" title="Заказать">
 						Заказать
 					</a>
 				</div>
 				<!---- Main menu [End]  -->
-	
+
 				<!---- Wrapper ---->
-				<div class="wrapper">
-					<div class="wrapper__burger">
-						<img class="wrapper__burger_img" src="images/content/intro/burger_main.png" alt="Burger">
+				<div class="header-main">
+					<div class="header-main__burger">
+						<img class="header-main__burger_img" src="images/content/intro/burger_main.png" alt="Burger">
 					</div>
-					<div class="wrapper__title">
-						<h1 class="wrapper__title_first">
+					<div class="header-main__title">
+						<h1 class="header-main__title_first">
 							Мы делаем
 						</h1>
-						<h2 class="wrapper__title_second">
+						<h2 class="header-main__title_second">
 							натуральные <br> бургеры
 						</h2>
 					</div>
 				</div>
-				
+
 				<div class="activ-link">
 					<ul class="activ-link__list">
 						<li><a href="#" class="activ-link__list_item activ-item"></a></li>
@@ -82,7 +83,7 @@
 						<li><a href="#" class="activ-link__list_item"></a></li>
 					</ul>
 				</div>
-				
+
 				<a href="#" class="arrow-down">
 					<img src="images/svgicons/arrow-scroll.svg" alt="arrow-scroll">
 				</a>
@@ -90,6 +91,86 @@
 			<!---- Wrapper [End] ---->
 		</header>
 		<!---- Main screen [End] ---->
+
+		<!---- Section We Best ---->
+		<section class="weBest">
+			<div class="container">
+				<div class="section__top">
+					<h2 class="section__title">
+						Мы лучшие
+					</h2>
+				</div>
+				<div class="advantages">
+					<div class="advantages__item">
+						<img src="images/svgicons/meat.svg" class="advantages__item_img">
+						<span class="advantages__item_title">
+							100% свежее мясо
+						</span>
+						<p class="advantages__item_text">
+							Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
+						</p>
+					</div>
+					<div class="advantages__item">
+						<img src="images/svgicons/hand.svg" class="advantages__item_img">
+						<span class="advantages__item_title">
+							Ручная сборка
+						</span>
+						<p class="advantages__item_text">
+							Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает
+							сюжетный реформаторский пафос.
+						</p>
+					</div>
+					<div class="advantages__item">
+						<img src="images/svgicons/natural.svg" class="advantages__item_img">
+						<span class="advantages__item_title">
+							Натуральные
+							ингредиенты
+						</span>
+						<p class="advantages__item_text">
+							Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!---- Section We Best [End]---->
+
+		<!---- Section Rewies  ---->
+		<section class="rewies">
+			<div class="clients-rewies">
+				<div class="clients-rewies__photo">a
+					<div class="clients-rewies__info">
+						<h4 class="clients-rewies__info_name">
+							Константин Спилберг
+						</h4>
+						<p class="clients-rewies__info_text">
+							Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут
+							быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+						</p>
+					</div>
+				</div>
+				<div class="clients-rewies__photo">a
+					<div class="clients-rewies__info">
+						<h4 class="clients-rewies__info_name">
+							Константин Спилберг
+						</h4>
+						<p class="clients-rewies__info_text">
+							Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут
+							быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
+						</p>
+					</div>
+				</div>
+				<div class="clients-rewies__photo">a</div>
+				<div class="clients-rewies__photo">a</div>
+				<div class="clients-rewies__photo">a</div>
+				<div class="clients-rewies__photo">a</div>
+				<div class="clients-rewies__photo">a</div>
+				<div class="clients-rewies__photo">a</div>
+
+			</div>
+		</section>
+		<!---- Section Rewies [End] ---->
+	</div>
 </body>
 
 </html>

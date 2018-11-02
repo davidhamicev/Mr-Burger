@@ -48,6 +48,7 @@ h4,
 h5,
 h6,
 p {
+  display: block;
   font-weight: normal;
   line-height: normal;
   margin: 0px; }
@@ -73,6 +74,50 @@ a {
   text-decoration: none;
   color: #fff; }
 
+img,
+span {
+  display: block; }
+
+.wrapper {
+  min-width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.container {
+  width: 940px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.section__top {
+  padding-top: 133px;
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
+  color: #2f3234; }
+
 /**** Header styles ****/
 .header {
   min-width: 100%;
@@ -81,24 +126,6 @@ a {
   -webkit-background-size: cover;
           background-size: cover;
   position: relative; }
-  .header .container {
-    width: 940px;
-    height: 100vh;
-    margin: 0 auto;
-    position: relative;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
   .header .top-bar {
     display: -webkit-box;
     display: -webkit-flex;
@@ -110,9 +137,9 @@ a {
             justify-content: space-between;
     padding-top: 13px;
     font-family: "ubuntumedium", Arial, sans-serif;
+    text-transform: uppercase;
     font-size: 0.750rem; }
     .header .top-bar__nav {
-      text-transform: uppercase;
       height: 100%;
       width: 100%;
       margin-bottom: 15px; }
@@ -145,7 +172,7 @@ a {
   .btn__order:hover {
     background: #c1401e; }
 
-.wrapper {
+.header-main {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -158,17 +185,17 @@ a {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
-  .wrapper__title {
+  .header-main__title {
     margin-right: auto;
     margin-top: 43px;
     margin-left: 12px; }
-    .wrapper__title_first {
+    .header-main__title_first {
       font-family: "gagalinregular", Arial, sans-serif;
       font-size: 4.5rem;
       color: #f9b43b;
       text-transform: uppercase;
       line-height: 1.59em; }
-    .wrapper__title_second {
+    .header-main__title_second {
       font-family: "lifehackmedium", Arial, sans-serif;
       font-size: 3.875rem;
       color: #fff;
@@ -226,3 +253,77 @@ a {
   margin-bottom: 40px; }
 
 /**** Header styles [End]****/
+/**** Section We Best styles ****/
+.weBest {
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(../../../images/bg/best-bg.jpg);
+  -webkit-background-size: cover;
+          background-size: cover; }
+  .weBest .advantages {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    margin-bottom: 70px; }
+    .weBest .advantages__item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      text-align: center;
+      padding: 0 10px; }
+      .weBest .advantages__item_title {
+        font-size: 1.5rem;
+        font-family: 'lifehackmedium', Arial, Helvetica, sans-serif;
+        color: #2f3234;
+        margin-top: 34px;
+        margin-bottom: 26px; }
+      .weBest .advantages__item_text {
+        font-family: 'ubuntumedium', Arial, Helvetica, sans-serif;
+        color: #767574;
+        font-size: 0.875rem; }
+
+/**** Section We Best [End]****/
+/**** Section Reviews styles ****/
+.clients-rewies {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+  .clients-rewies__photo {
+    width: 25%;
+    height: 50%;
+    position: relative; }
+    .clients-rewies__photo .clients-rewies__info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 30px 20px;
+      display: none; }
+    .clients-rewies__photo:hover .clients-rewies__info {
+      display: block; }
+
+/**** Section Reviews [End]****/
