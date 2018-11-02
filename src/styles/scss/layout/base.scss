@@ -5,6 +5,7 @@ h4,
 h5,
 h6,
 p {
+	display: block;
 	font-weight: normal;
 	line-height: normal;
 	margin: 0px;
@@ -13,6 +14,7 @@ p {
 ul {
 	list-style-type: none;
 }
+
 * {
 	--moz-transition: all 0.3s ease;
 	-webkit-transition-property: all;
@@ -32,4 +34,35 @@ a {
 	display: block;
 	text-decoration: none;
 	color: #fff;
+}
+
+img,
+span {
+	display: block;
+}
+
+.wrapper {
+	min-width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	width: 940px;
+	height: 100vh;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.section__top {
+	padding-top: 133px;
+	text-align: center;
+	font-size: 4rem;
+	font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
+	color: #2f3234;
 }

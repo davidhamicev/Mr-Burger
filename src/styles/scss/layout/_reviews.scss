@@ -1,0 +1,27 @@
+.clients-rewies {
+	width: 100%;
+	height: 100vh;
+	 display: flex;
+	 justify-content: space-between;
+	 flex-wrap: wrap;
+
+	&__photo {
+		width: 25%;	
+		height: 50%;
+		position: relative;
+
+		.clients-rewies__info {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 30px 20px;
+			display: none;
+		}
+
+		&:hover .clients-rewies__info {
+			display: block;
+		}
+	}
+}
+
+// <img src="images/content/photo-reviews/8.jpg" alt="" class="clients-rewies__photo">
