@@ -1,4 +1,4 @@
-# Стартовый проект с Gulp4
+# Mr. Burger(D. Kh.)
 
 <table>
   <thead>
@@ -9,8 +9,8 @@
   </thead>
   <tbody>
     <tr>
-      <td><code>git clone 'url'</code></td>
-      <td>Клонировать данный репозиторий.</td>
+      <td><code>gh-pages</code></td>
+      <td>https://davidhamicev.github.io/Mr-Burger/</td>
     </tr>
     <tr>
       <td><code>cd path/to/</code></td>
