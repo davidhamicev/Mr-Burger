@@ -7,13 +7,13 @@
 //Blocks
 
 /**** Header styles ****/
-@import 'layout/header';
+@import 'blocks/header.scss';
 /**** Header styles [End]****/
 
 /**** Section We Best styles ****/
-@import 'layout/weBest';
+@import 'blocks/best.scss';
 /**** Section We Best [End]****/
 
 /**** Section Reviews styles ****/
-@import 'layout/reviews';
+@import 'blocks/reviews.scss';
 /**** Section Reviews [End]****/

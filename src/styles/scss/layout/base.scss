@@ -36,17 +36,12 @@ a {
 	color: #fff;
 }
 
-img,
-span {
-	display: block;
-}
-
 .wrapper {
-	min-width: 100%;
-	max-width: 100%;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
+	position: relative;
+  width: 100%;
+  min-width: 940px;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .container {
@@ -56,7 +51,11 @@ span {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
+
+	&--content-between{
+		justify-content: space-between;
+	}
 }
 
 .btn__order {
@@ -72,10 +71,9 @@ span {
 	}
 }
 
-.section__top {
-	padding-top: 133px;
+.section__title {
 	text-align: center;
-	font-size: 4rem;
+	font-size: 4.5rem;
 	font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
 	color: #2f3234;
 }
