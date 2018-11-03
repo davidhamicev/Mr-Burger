@@ -74,23 +74,12 @@ a {
   text-decoration: none;
   color: #fff; }
 
-img,
-span {
-  display: block; }
-
 .wrapper {
-  min-width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  position: relative;
+  width: 100%;
+  min-width: 940px;
+  min-height: 100%;
+  overflow: hidden; }
 
 .container {
   width: 940px;
@@ -106,10 +95,14 @@ span {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .container--content-between {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
 
 .btn__order {
   background: #e45028;
@@ -125,10 +118,9 @@ span {
   .btn__order:hover {
     background: #c1401e; }
 
-.section__top {
-  padding-top: 133px;
+.section__title {
   text-align: center;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-family: 'gagalinregular', Arial, Helvetica, sans-serif;
   color: #2f3234; }
 
@@ -250,21 +242,13 @@ span {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   margin-bottom: 40px; }
 
 /**** Header styles [End]****/
 /**** Section We Best styles ****/
-.weBest {
-  min-width: 100%;
-  min-height: 100%;
-  background-image: url(../images/bg/best-bg.jpg);
-  -webkit-background-size: cover;
-          background-size: cover; }
-  .weBest .advantages {
+.best {
+  background: url("../images/bg/best-bg.jpg") center center/cover; }
+  .best .advantages {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -278,7 +262,7 @@ span {
         -ms-flex-align: baseline;
             align-items: baseline;
     margin-bottom: 70px; }
-    .weBest .advantages__item {
+    .best .advantages__item {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -290,13 +274,13 @@ span {
               flex-direction: column;
       text-align: center;
       padding: 0 10px; }
-      .weBest .advantages__item_title {
+      .best .advantages__item_title {
         font-size: 1.5rem;
         font-family: 'lifehackmedium', Arial, Helvetica, sans-serif;
         color: #2f3234;
         margin-top: 34px;
         margin-bottom: 26px; }
-      .weBest .advantages__item_text {
+      .best .advantages__item_text {
         font-family: 'ubuntumedium', Arial, Helvetica, sans-serif;
         color: #767574;
         font-size: 0.875rem; }
