@@ -1,19 +1,18 @@
 .best {
 	background: url("../images/bg/best-bg.jpg") center center / cover;
 
-	.advantages {
+	.best__list {
 		display: flex;
-		justify-content: space-between;
 		align-items: baseline;
-		margin-bottom: 70px;
+		margin-top: 56px;
 
-		&__item {
+		.best__item {
 			display: flex;
 			flex-direction: column;
 			text-align: center;
 			padding: 0 10px;
 
-			&_title {
+			.best__title {
 				font-size: 1.5rem;
 				font-family: 'lifehackmedium', Arial, Helvetica, sans-serif;
 				color: #2f3234;
@@ -21,10 +20,11 @@
 				margin-bottom: 26px;
 			}
 
-			&_text {
-				font-family: 'ubuntumedium', Arial, Helvetica, sans-serif;
-				color: #767574;
+			.best__text {
+				font-family: 'ubuntulight', Arial, Helvetica, sans-serif;
+				color: #848281;
 				font-size: 0.875rem;
+				line-height: 1.8em;
 			}
 		}
 	}

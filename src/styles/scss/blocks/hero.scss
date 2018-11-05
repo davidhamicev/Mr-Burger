@@ -1,0 +1,83 @@
+.hero {
+	min-height: 100%;
+	background: url(../images/bg/intro-bg.jpg);
+	background-size: cover;
+	position: relative;
+}
+
+.hero__container {
+	justify-content: space-between;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 13px;
+	font-family: "ubuntumedium", Arial, sans-serif;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+}
+
+.header__btns {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+
+.nav__list {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: 15px;
+}
+
+.nav__item {
+	display: flex;
+	align-items: center;
+	color: #fff;
+	text-align-last: left;
+	margin-left: 10px;
+}
+
+.nav__item::before {
+	content: "";
+	display: block;
+	width: 4px;
+	height: 4px;
+	background: #fff;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.nav__link:hover {
+	color: #e77252;
+}
+
+.nav__item:nth-child(1) {
+	&::before {
+		display: none;
+	}
+}
+
+.hero__content {
+	display: flex;
+	align-items: center;
+	margin-bottom: 100px;
+}
+
+.hero__text {
+	margin-left: 13px;
+	margin-top: 55px;
+}
+
+.hero__desc {
+	font-family: "lifehackmedium", Arial, sans-serif;
+	font-size: 4rem;
+	color: #fff;
+	text-transform: inherit;
+	line-height: 1em;
+}
+
+.arrow-down {
+	margin-bottom: 40px;
+	align-self: center;
+}

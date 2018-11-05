@@ -4,16 +4,10 @@
 //Layout
 @import 'layout/fonts.scss';
 @import 'layout/base.scss';
+
 //Blocks
+@import 'blocks/hero.scss';
 
-/**** Header styles ****/
-@import 'blocks/header.scss';
-/**** Header styles [End]****/
-
-/**** Section We Best styles ****/
 @import 'blocks/best.scss';
-/**** Section We Best [End]****/
 
-/**** Section Reviews styles ****/
 @import 'blocks/reviews.scss';
-/**** Section Reviews [End]****/
