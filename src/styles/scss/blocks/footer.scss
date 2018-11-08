@@ -1,0 +1,51 @@
+.container--footer {
+	height: auto
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding: 10px 0;
+	background: url(../images/bg/footer-bg.jpg) center center / cover no-repeat;
+	font-family: 'ubuntulight', Arial, sans-serif;
+	font-size: 0.875rem;
+	color: #fff;
+}
+
+.foot {
+	display: flex;
+}
+.foot__addres {
+	width: 50%;
+}
+
+.foot__soc {
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.foot__phone {
+	display: flex;
+	color: #E45028;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.foot__icon-img {
+	width: 12px;
+	height: 11px;
+	margin-right: 10px;
+}
+
+.socials__list {
+	display: flex;
+}
+
+.socials__icon {
+	fill: #5a5a5a;
+	width: 20px;
+	height: 16px;
+	margin-left: 19px;
+}

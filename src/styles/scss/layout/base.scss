@@ -1,7 +1,7 @@
 * {
 	--moz-transition: all 0.5s ease;
 	-webkit-transition-property: all;
-	-webkit-transition-duration: 0.3s;
+	-webkit-transition-duration: 0.2s;
 	-webkit-transition-timing-function: ease;
 	box-sizing: border-box;
 }
@@ -50,6 +50,13 @@ footer {
 	&_yellow {
 		color: #f9b43b;
 		margin-bottom: 20px;
+	}
+
+	&_white {
+		color: #ffffff;
+		text-align: left;
+		padding-top: 9%;
+		padding-left: 8%;
 	}
 }
 
@@ -102,19 +109,21 @@ a {
 			;
 		}
 	}
+
+	&--clean {
+		text-transform: capitalize;
+		font-size: 0.875rem;
+	}
 }
 
 .pagination {
-	position: absolute;
+	position: fixed;
 	top: 80px;
-	right: 20px;
+	right: 60px;
 
 	&__list {
 		display: flex;
 		flex-direction: column;
-		position: fixed;
-		right: 60px;
-		top: 80px;
 	}
 
 	&__link {
