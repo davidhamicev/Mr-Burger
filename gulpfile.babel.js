@@ -3,6 +3,7 @@ import del from "del";
 import ghPages from "gulp-gh-pages";
 import sass from "gulp-sass";
 import postcss from "gulp-postcss";
+import pxtorem from "gulp-pxtorem";
 import autoprefixer from "autoprefixer";
 import plumber from "gulp-plumber";
 import browserSync from "browser-sync";
@@ -62,12 +63,19 @@ function styles() {
     autoprefixer({
       browsers: ["last 10 version", "IE 11", "Firefox ESR"]
     })
-  ];
+	];
+	
+	let pxtoremOptions = {
+		propList: ['*'],
+		selectorBlackList: ['html']
+	};
+
   return gulp
     .src(paths.styles.src)
     .pipe(plumber())
     .pipe(sass())
-    .pipe(postcss(plugins))
+		.pipe(postcss(plugins))
+		.pipe(pxtorem(pxtoremOptions))
     .pipe(gulp.dest(paths.styles.dest));
 }
 

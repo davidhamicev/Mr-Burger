@@ -6,15 +6,26 @@
 	display: flex;
 	color: #fff;
 	font-family: 'ubuntulight', Arial, sans-serif;
+	padding: 2%;
 	font-size: 0.875rem;
+
+	@include tablets {
+		flex-direction: column;
+		align-items: center;
+	}
 
 	&__title {
 		margin-bottom: 5px;
 	}
 
 	&__column {
-		width: 50%;
-		margin-right: 20px;
+		width: 45%;
+		margin-right: 5%;
+
+		@include tablets {
+			width: 80%;
+			margin: 0;
+		}
 
 		&:last-child {
 			margin-right: 0;

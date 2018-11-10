@@ -8,6 +8,14 @@
 
 html {
 	font-size: 16px;
+
+	@include tablets {
+		font-size: 13px;
+	}
+
+	@include phone {
+		font-size: 11px;
+	}
 }
 
 h1,
@@ -29,6 +37,10 @@ ul {
 	li {
 		list-style: none;
 	}
+}
+
+img {
+	width: 100%;
 }
 
 footer {
@@ -54,9 +66,6 @@ footer {
 
 	&_white {
 		color: #ffffff;
-		text-align: left;
-		padding-top: 9%;
-		padding-left: 8%;
 	}
 }
 
@@ -68,20 +77,23 @@ a {
 
 .wrapper {
 	position: relative;
-	width: 100%;
-	min-width: 940px;
 	min-height: 100%;
 	overflow: hidden;
 }
 
 .container {
-	width: 940px;
-	height: 100%;
 	margin: 0 auto;
 	position: relative;
+	width: auto;
+	height: 100%;
+	max-width: 940px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+	@include tablets {
+		width: 95%;
+	}
 }
 
 .btn {
@@ -106,7 +118,10 @@ a {
 
 		&:hover {
 			background: #282a2b;
-			;
+		}
+
+		@include tablets {
+			align-self: center;
 		}
 	}
 
@@ -120,6 +135,14 @@ a {
 	position: fixed;
 	top: 80px;
 	right: 60px;
+
+	@include tablets {
+		display: none;
+	}
+
+	@include phone {
+		display: none;
+	}
 
 	&__list {
 		display: flex;
@@ -144,4 +167,70 @@ a {
 	height: 16px;
 	border: 1px solid #fff;
 	border-radius: 50%;
+}
+
+
+.nav-trigger {
+	display: none;
+	position: fixed;
+	top: 29px;
+	right: 28px;
+	z-index: 999;
+	@include tablets {
+		display: block;
+		top: 3.5%;
+		right: 4%;
+	}
+
+	@include phone {
+		top: 4%;
+	}
+	
+
+	&__link {
+		display: block;
+		width: 25Px;
+		height: 25Px;
+	}
+
+	&__badge {
+
+		&,
+		&::before,
+		&::after {
+			display: block;
+			height: 4px;
+			width: 25Px;
+			border-radius: 4px;
+			background-color:#fff;
+		}
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+		}
+
+		&::before {
+			top: 9Px;
+		}
+
+		&::after {
+			top: 18Px;
+		}
+	}
+
+	&.is-active {
+		.nav-trigger__badge {
+			background-color: transparent;
+
+			&::before {
+				transform: rotate(45deg);
+			}
+
+			&::after {
+				transform: translateY(-9Px) rotate(-45deg);
+			}
+		}
+	}
 }

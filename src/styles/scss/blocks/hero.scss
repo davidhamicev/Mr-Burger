@@ -15,6 +15,14 @@
 	font-family: "ubuntumedium", Arial, sans-serif;
 	text-transform: uppercase;
 	font-size: 0.8rem;
+
+	@include tablets {
+		padding-right: 10%;
+	}
+
+	@include phone {
+		padding-right: 15%;
+	}
 }
 
 .logo__img {
@@ -25,12 +33,20 @@
 .header__btns {
 	display: flex;
 	align-items: center;
-	margin-left: auto;
 }
 
+.nav {
+	@include tablets {
+		display: none;
+	}
+
+	@include phone {
+		display: none;
+	}
+}
 .nav__list {
 	display: flex;
-	flex-wrap: wrap;
+	white-space: nowrap;
 	margin-right: 15px;
 }
 
@@ -39,7 +55,6 @@
 	align-items: center;
 	color: #fff;
 	text-align-last: left;
-	margin-left: 10px;
 }
 
 .nav__item::before {
@@ -49,7 +64,7 @@
 	height: 4px;
 	background: #fff;
 	border-radius: 50%;
-	margin-right: 15px;
+	margin: 0 0.5rem;
 }
 
 .nav__link:hover {
@@ -66,11 +81,25 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 100px;
+
+	@include tablets {
+		flex-direction: column;
+	}
+}
+
+.hero__pic {
+	width: 50%;
 }
 
 .hero__text {
 	margin-left: 13px;
 	margin-top: 55px;
+
+	@include tablets {
+		margin-left: 0;
+		width: 80%;
+		text-align: center;
+	}
 }
 
 .hero__desc {

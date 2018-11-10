@@ -1,6 +1,14 @@
+//Breakpoints
+$tablets: 768px;
+$phone: 480px;
+
+//media
+@import 'layout/media.scss';
+
 //Config
 @import 'config/variables.scss';
 @import 'config/mixins.scss';
+
 //Layout
 @import 'layout/fonts.scss';
 @import 'layout/base.scss';

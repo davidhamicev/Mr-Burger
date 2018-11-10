@@ -5,6 +5,9 @@
 		display: flex;
 		align-items: baseline;
 		margin-top: 56px;
+		@include phone {
+			flex-direction: column;
+		}
 
 		.best__item {
 			display: flex;
@@ -12,11 +15,23 @@
 			text-align: center;
 			padding: 0 10px;
 
+			@include phone {
+				flex-direction: row;
+				align-items: center;
+				margin-top: 3%;
+			}
+
 			.best__icon-img {
 				width: 97px;
 				height: 89px;
 			}
 
+			.best__content {
+				@include phone {
+					text-align: left;
+					margin-left: 5%;
+				}
+			}
 			.best__title {
 				font-size: 1.5rem;
 				font-family: 'lifehackmedium', Arial, Helvetica, sans-serif;
@@ -30,6 +45,9 @@
 				color: #848281;
 				font-size: 0.875rem;
 				line-height: 1.8em;
+				@include phone {
+					font-size: 16px;
+				}
 			}
 		}
 	}
