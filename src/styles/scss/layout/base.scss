@@ -14,7 +14,7 @@ html {
 	}
 
 	@include phone {
-		font-size: 11px;
+		font-size: 12x;
 	}
 }
 
@@ -84,7 +84,7 @@ a {
 .container {
 	margin: 0 auto;
 	position: relative;
-	width: auto;
+	width: 95%;
 	height: 100%;
 	max-width: 940px;
 	display: flex;
@@ -104,6 +104,10 @@ a {
 	text-transform: uppercase;
 	font-size: 0.8rem;
 
+	@include phone {
+		font-size: 0.8125rem;
+	}
+
 	&--order {
 		background: #e45028;
 
@@ -122,6 +126,19 @@ a {
 
 		@include tablets {
 			align-self: center;
+		}
+
+		@include phone {
+			display: none;
+		}
+
+		&-phones {
+			display: none;
+
+			@include phone {
+				display: block;
+				margin-top: 20px;
+			}
 		}
 	}
 
@@ -176,6 +193,7 @@ a {
 	top: 29px;
 	right: 28px;
 	z-index: 999;
+
 	@include tablets {
 		display: block;
 		top: 3.5%;
@@ -185,7 +203,7 @@ a {
 	@include phone {
 		top: 4%;
 	}
-	
+
 
 	&__link {
 		display: block;
@@ -202,7 +220,7 @@ a {
 			height: 4px;
 			width: 25Px;
 			border-radius: 4px;
-			background-color:#fff;
+			background-color: #fff;
 		}
 
 		&::after,

@@ -7,6 +7,7 @@
 		margin-top: 56px;
 		@include phone {
 			flex-direction: column;
+			margin-top: 20px;
 		}
 
 		.best__item {
@@ -37,7 +38,6 @@
 				font-family: 'lifehackmedium', Arial, Helvetica, sans-serif;
 				color: #2f3234;
 				margin-top: 34px;
-				margin-bottom: 26px;
 			}
 
 			.best__text {
@@ -47,6 +47,7 @@
 				line-height: 1.8em;
 				@include phone {
 					font-size: 16px;
+					margin-top: 10px;
 				}
 			}
 		}

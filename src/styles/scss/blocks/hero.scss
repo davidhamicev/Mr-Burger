@@ -44,10 +44,15 @@
 		display: none;
 	}
 }
+
 .nav__list {
 	display: flex;
-	white-space: nowrap;
+	flex-wrap: wrap;
 	margin-right: 15px;
+
+	@media (max-width: 840px) {
+		justify-content: center;
+	}
 }
 
 .nav__item {
@@ -55,6 +60,10 @@
 	align-items: center;
 	color: #fff;
 	text-align-last: left;
+
+	@media (max-width: 840px) {
+		padding-top: 15px;
+	}
 }
 
 .nav__item::before {
@@ -97,7 +106,7 @@
 
 	@include tablets {
 		margin-left: 0;
-		width: 80%;
+		width: 100%;
 		text-align: center;
 	}
 }

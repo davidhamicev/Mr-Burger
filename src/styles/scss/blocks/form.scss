@@ -12,6 +12,7 @@
 	@include tablets {
 		flex-direction: column;
 		align-items: center;
+		font-size: 0.875rem;
 	}
 
 	&__title {
@@ -27,6 +28,10 @@
 			margin: 0;
 		}
 
+		@include phone {
+			width: 100%;
+		}
+
 		&:last-child {
 			margin-right: 0;
 		}
@@ -35,6 +40,10 @@
 	&__row {
 		display: flex;
 		margin-bottom: 20px;
+
+		@include phone {
+			font-size: 1rem;
+		}
 	}
 
 	&__block {
@@ -53,6 +62,11 @@
 		padding-left: 21px;
 		padding-right: 10px;
 		height: 35px;
+		border: none;
+
+		&:focus {
+			border: 2px solid #f9b43b;
+		}
 	}
 
 	&__textarea {
@@ -89,7 +103,8 @@
 		display: inline-block;
 	}
 
-	&__check {cursor: pointer;
+	&__check {
+		cursor: pointer;
 		display: flex;
 
 		&--icon {
@@ -107,14 +122,29 @@
 	}
 }
 
+.form__buttons {
+	@include phone {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.form__row {
+		@include phone {
+			margin-top: 10px;
+		}
+	}
+}
+
 .form__radio--icon:checked+.form__radio--icon--custom::before {
 	content: "";
 	display: block;
 	width: 7px;
 	height: 7px;
 	position: absolute;
-	top: 4px;
-	left: 4px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	background: #e45028;
 	border-radius: 50%;
 }

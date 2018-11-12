@@ -14,9 +14,21 @@
 
 .foot {
 	display: flex;
+
+	@include phone {
+		flex-direction: column;
+		align-items: center;
+	}
 }
+
 .foot__addres {
 	width: 50%;
+
+	@include phone {
+		margin-bottom: 15px;
+		width: 100%;
+		text-align: center;
+	}
 }
 
 .foot__soc {
@@ -24,6 +36,9 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	@include phone {
+		justify-content: center;
+	}
 }
 
 .foot__phone {
@@ -31,6 +46,9 @@
 	color: #E45028;
 	font-weight: bold;
 	margin-top: 10px;
+	@include phone {
+		justify-content: center;
+	}
 }
 
 .foot__icon-img {
