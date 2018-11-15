@@ -98,6 +98,14 @@
 
 .hero__pic {
 	width: 50%;
+
+	@include tablets {
+		width: 60%;
+	}
+
+	@include phone {
+		width: 70%;
+	}
 }
 
 .hero__text {
@@ -117,8 +125,11 @@
 	color: #fff;
 	text-transform: inherit;
 	line-height: 1em;
-}
 
+	@include phone {
+		font-size: 3rem;
+	}
+}
 .arrow-down {
 	margin-bottom: 40px;
 	align-self: center;

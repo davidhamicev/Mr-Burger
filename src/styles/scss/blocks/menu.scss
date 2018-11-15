@@ -38,6 +38,13 @@
 	background-size: cover;
 	width: 80px;
 
+	@include tablets {
+		width: 4rem;
+	}
+
+	@include phone {
+		width: 3rem;
+	}
 }
 
 .menu-accordeon__head {
@@ -49,6 +56,10 @@
 	text-transform: uppercase;
 	color: #ffffff;
 	font-size: 2.5rem;
+
+	@include tablets {
+		font-size: 2rem;
+	}
 }
 
 .menu-accordeon__body {

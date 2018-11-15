@@ -1,0 +1,64 @@
+.nav-mobile {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -999px;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  &__menu {
+    display: none;
+  }
+  .logo {
+    display: none;
+  }
+  &.is-active {
+    top: 0;
+    bottom: 0;
+    background-color: rgba(#2f3234, 0.9);
+    transition: 0.8s;
+    .nav-mobile__menu {
+      display: block;
+    }
+    .logo {
+      display: block;
+      position: fixed;
+      top: 13px;
+      left: 16px;
+      z-index: 999;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &::after {
+			content: "";
+			display: block;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: #fff;
+      margin: 1rem 0;
+    }
+    &:last-child::after {
+      display: none;
+		}
+  }
+  &__link {
+    font-size: 18px;
+		padding: 4px;
+		font-family: "ubuntumedium", Arial, sans-serif;
+		text-transform: uppercase;
+		
+		&:hover {
+			color: #e77252;
+		}
+  }
+} 

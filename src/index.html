@@ -74,7 +74,7 @@
 
 			<section class="section best">
 				<div class="container">
-					<h2 class="section-title">
+					<h2 class="section-title section-title_center">
 						Мы лучшие
 					</h2>
 					<ul class="best__list">
@@ -132,6 +132,69 @@
 							</div>
 						</li>
 					</ul>
+				</div>
+			</section>
+
+			<section class="section burgers">
+				<div class="container">
+					<div class="slider">
+						<div class="slider__wrap">
+							<ul class="slider__list">
+								<li class="slider__item">
+									<div class="burger">
+										<div class="burger__pic">
+											<img src="images/content/burgers-slider/dark_beef.png" alt="Dark Beef" class="burger__img">
+										</div>
+										<div class="burger__desc">
+											<h2 class="section-title section-title_white">Dark BEEF Burger</h2>
+											<div class="burger__text">
+												<p>
+													Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра
+													эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса
+													чураско.
+												</p>
+											</div>
+											<div class="burger__order">
+												<div class="burger__price">
+													<span class="burger__price-cost">500</span>
+													<span class="burger__price-text">рублей</span>
+												</div>
+												<a href="#" class="btn btn--order">Заказать</a>
+											</div>
+										</div>
+										<div class="burger__note burger__note--consist">
+											<svg class="burger__consist-svg">
+												<use xlink:href="./images/sprite.svg#burger">
+												</use>
+											</svg>
+											<span class="burger__note-text">Состав</span>
+										</div>
+
+										<div class="burger__note burger__note--calory">
+											<svg class="burger__calory-svg">
+												<use xlink:href="./images/sprite.svg#kkal">
+												</use>
+											</svg>
+											<span class="burger__note-text burger__note-text--num burger__note-text--opacity">1200</span>
+											<span class="burger__note-text burger__note-text--opacity">Ккал</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="slider__arrows">
+							<button class="scroll-button scroll-button--prev">
+								<svg class="arrow-scroll arrow-scroll--left">
+									<use xlink:href="./images/sprite.svg#arrow-scroll"></use>
+								</svg>
+							</button>
+							<button class="scroll-button scroll-button--next">
+								<svg class="arrow-scroll arrow-scroll--right">
+									<use xlink:href="./images/sprite.svg#arrow-scroll"></use>
+								</svg>
+							</button>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -430,7 +493,7 @@
 
 			<section class="section order">
 				<div class="container">
-					<h2 class="section-title section-title_yellow">
+					<h2 class="section-title section-title_yellow section-title_center">
 						Закажите доставку
 					</h2>
 					<form class="form" action="#" method="POST">
@@ -597,6 +660,41 @@
 		</a>
 	</div>
 
+	<div class="nav-mobile">
+		<nav class="nav-mobile__menu">
+			<ul class="nav-mobile__list">
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="0">Главная</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="1">О нас</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="2">Бургеры</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="3">Команда</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="4">Меню</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="5">Отзывы</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="6">Заказать</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="7">Контакты</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="logo">
+			<a href="" class="logo__link">
+				<img src="images/logo/logo.svg" alt="logo" class="logo__img">
+			</a>
+		</div>
+		<script src="scripts/main.js"></script>
 </body>
 
 </html>
