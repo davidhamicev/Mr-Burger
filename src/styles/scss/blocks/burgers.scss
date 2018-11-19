@@ -1,11 +1,11 @@
 .burgers {
-
 	background: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%);
 	position: relative;
 }
 
 .slider {
 	display: flex;
+	position: relative;
 
 	&__wrap {
 		overflow: hidden;
@@ -17,6 +17,17 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
+		left: -100%;
+		transform: translateX(-100%);
+
+		&.is-reverse {
+			transform: translateX(100%);
+		}
+
+		&.is-move {
+			transform: none;
+			transition: transform .8s ease;
+		}
 	}
 
 	&__item {
@@ -24,6 +35,11 @@
 		width: 100%;
 		height: 100%;
 		flex: 1 0 100%;
+		order: 2;
+
+		&.is-one {
+			order: 1;
+		}
 	}
 }
 
@@ -54,6 +70,7 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1;
+		margin-left: 1%;
 
 		@include tablets {
 			flex: auto;
@@ -111,7 +128,7 @@
 			padding: 13px 21px;
 			border-radius: 5px;
 			cursor: pointer;
-			transition: .3s;
+			
 
 			&:hover {
 				background-color: #e45028;
@@ -207,4 +224,59 @@
 	&--right {
 		transform: rotate(-90deg);
 	}
+}
+
+
+//burger composition 
+
+.burger__composition {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	display: none;
+	
+
+	&.onVisible {
+		display: block;
+		
+	}
+}
+
+.ingredients {
+	width: 270px;
+	padding: 18px 22px;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 12px;
+		font-size: .875rem;
+		font-family: 'ubunturegular', Arial, sans-serif;
+		font-weight: 500;
+	}
+
+	&__product {
+		margin-left: 24px;
+	}
+
+	&__weight {
+		margin-left: auto;
+	}
+}
+
+.ingredients__icon-beef,
+.ingredients__icon-sauce {
+	fill: #e45028;
+}
+
+.ingredients__icon-salad,
+.ingredients__icon-cucumber {
+	fill: #8ac03e;
+}
+
+.ingredients__icon-buns,
+.ingredients__icon-cheese {
+	fill: #f8b43a;
 }
