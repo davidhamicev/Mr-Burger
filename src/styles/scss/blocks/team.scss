@@ -3,18 +3,17 @@
 	position: relative;
 }
 
-.team__block {
+.team__wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	//justify-content: center;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 50%;
 	background: rgba(47, 50, 52, 0.93);
-	padding: 0 2% 0 7%;
 
 	@include tablets {
 		left: 0;
@@ -22,16 +21,35 @@
 	}
 }
 
+.team__block {
+	width: 70%;
+	margin-top: 25%;
+}
+
 .team-accordeon {
 	margin-top: 27px;
 
 	@include tablets {
-		margin-top: 31px;
+		margin-top: 51px;
 	}
 }
 
 .team-accordeon__item {
-	margin-bottom: 5%;
+	margin-bottom: 7%;
+
+	@include tablets {
+		margin-bottom: 41px;
+	}
+
+	&.is-active {
+		.team-accordeon__head {
+			color: #f9b43b;
+
+			&::before {
+				transform: rotate(180deg);
+			}
+		}
+	}
 }
 
 .team-accordeon__head {
@@ -67,33 +85,18 @@
 	overflow: hidden;
 	height: 0;
 	padding-left: 17px;
-	padding-right: 17px;
+	transition: .5s;
 }
-
-.active-man {
-	.team-accordeon__content {
-		height: auto;
-	}
-
-	.team-accordeon__head {
-		color: #f9b43b;
-
-		&::before {
-			transform: rotate(180deg);
-		}
-	}
-}
-
 
 .team-accordeon__content-wrapp {
 	display: flex;
 	align-items: center;
-	margin-top: 15px;
+	padding-top: 15px;
 
 	@include tablets {
 		display: flex;
 		flex-direction: column;
-		margin-top: 16px;
+		padding-top: 16px;
 	}
 }
 
@@ -123,11 +126,13 @@
 		font-family: 'ubuntulight', Arial, sans-serif;
 		margin-top: 15px;
 		line-height: 1.5em;
+
 		@include phone {
 			font-size: 16px;
 		}
 
 	}
+
 	@include tablets {
 		padding: 0;
 	}

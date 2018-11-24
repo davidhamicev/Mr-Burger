@@ -128,7 +128,6 @@
 			padding: 13px 21px;
 			border-radius: 5px;
 			cursor: pointer;
-			
 
 			&:hover {
 				background-color: #e45028;
@@ -236,11 +235,10 @@
 	border-radius: 5px;
 	background-color: #FFFFFF;
 	display: none;
-	
+
 
 	&.onVisible {
 		display: block;
-		
 	}
 }
 
