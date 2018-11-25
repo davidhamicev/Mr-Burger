@@ -19,6 +19,7 @@
 .menu-accordeon__list {
 	height: 100%;
 	display: flex;
+	transition: transform .5s;
 }
 
 .menu-accordeon__item {
@@ -31,12 +32,6 @@
 	}
 
 	&.is-active {
-		.menu-accordeon__body {
-			//width: 540px;
-			height: 100%;
-			background: rgba(47, 50, 52, .9);
-			padding: 61px 35px 0 34px;
-		}
 
 		.menu-accordeon__head {
 			color: #f9b43b;
@@ -44,7 +39,7 @@
 
 		.menu-accordeon__text {
 			opacity: 1;
-			transition: opacity .5s;
+			transition: opacity .3s;
 			transition-delay: 0.5s;
 		}
 	}
@@ -83,8 +78,8 @@
 
 .menu-accordeon__body {
 	width: 0;
-	height: 100%;
 	overflow: hidden;
+	background: rgba(47, 50, 52, .93);
 	transition: width .8s;
 }
 
@@ -92,6 +87,7 @@
 	color: #fff;
 	font-family: 'ubuntulight', Arial, sans-serif;
 	font-size: 0.875rem;
-	line-height: 1.714em;
+	line-height: 1.8;
+	padding: 4rem 2rem;
 	opacity: 0;
 }

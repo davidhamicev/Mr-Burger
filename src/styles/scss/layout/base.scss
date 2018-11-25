@@ -149,6 +149,11 @@ a {
 	&--clean {
 		text-transform: capitalize;
 		font-size: 0.875rem;
+		background: none;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		color: #fff;
 	}
 }
 

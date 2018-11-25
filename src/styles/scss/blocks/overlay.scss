@@ -1,0 +1,65 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #2f3234;
+	background: rgba(47, 50, 52, .9);
+	z-index: 10000;
+
+	&__container {
+		position: relative;
+		padding: 1.5rem;
+		width: 460px;
+		background: #fff;
+		border-radius: 5px;
+		font-size: 14px;		
+		margin: 0;
+
+		@include tablets {
+			font-size: 20px;
+			width: 90%;
+		}
+	}
+
+	&__head {
+		font-family: 'gagalinregular', Arial, sans-serif;
+		margin-bottom: 25Px;
+	}
+
+	&__content {
+		line-height: 1.7;
+		font-family: 'ubuntulight', Arial, sans-serif;
+	}
+
+	&__close {
+		position: absolute;
+		right: 0;
+		top: 0;	
+		width: 20Px;
+		height: 20Px;
+		z-index: 999;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 5Px;
+			width: 4Px;
+			height: 20Px;
+			background: #ec8468;
+			border-radius: 4Px;
+		}
+
+		&::before{
+			transform: rotate(-45deg);
+		} 
+		&::after{
+			transform: rotate(45deg);
+		} 
+	}
+}

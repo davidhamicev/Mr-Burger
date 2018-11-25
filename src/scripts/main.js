@@ -124,33 +124,127 @@ function teamAccordion() {
 };
 teamAccordion();
 
-//вертикальный аккордион меню 
-function menuAccordion() {
-	const menuItem = document.querySelectorAll('.menu-accordeon__item');
+//вертикальный аккордеон меню 
+function menuAccordeon() {
+	const menuItems = document.querySelectorAll('.menu-accordeon__item');
 	const menuAcc = document.querySelector('.menu-accordeon__list');
 
 	menuAcc.addEventListener('click', event => {
 		event.preventDefault();
-		const target = event.target;
-		
-		for (const it of menuItem) {
-			if ( it !== target.parentNode) {
-				it.classList.remove('is-active');
-				it.lastElementChild.style.width = 0;
-			}
+
+		let target = event.target.parentNode;
+		let content = target.nextElementSibling;
+		let item = target.parentNode;
+
+		const tarWidth = target.clientWidth;
+		const windowWidht = document.documentElement.clientWidth;
+		const layoutContentWidth = 520;
+		const breackpontPhone = 480;
+		const closeMenuWidht = tarWidth * menuItems.length;
+		const openMenuWidth = closeMenuWidht + layoutContentWidth;
+
+		if (event.target.classList.contains('menu-accordeon__head')) {
+			moveMenu();
 		}
+
+		target = event.target;
+		content = target.nextElementSibling;
+		item = target.parentNode;
+
 		if (target.classList.contains('menu-accordeon__link')) {
-			const menuContent = target.nextElementSibling;
-			//console.log(menuContent.parentNode);
-		
-			if (menuContent.parentNode.classList.contains('is-active')) {
-				menuContent.parentNode.classList.remove('is-active');
-				menuContent.style.width = 0;
+			moveMenu();
+		}
+
+		function moveMenu() {
+			for (const it of menuItems) {
+				if (it != item) {
+					it.classList.remove('is-active');
+					it.lastElementChild.style.width = 0;
+					menuAcc.style.transform = 'translateX(0)';
+				}
+			}
+
+			if (item.classList.contains('is-active')) {
+				item.classList.remove('is-active');
+				content.style.width = 0;
 			} else {
-				menuContent.parentNode.classList.add('is-active');
-				menuContent.style.width = 520 + 'px';
+				item.classList.add('is-active');
+				content.style.width = layoutContentWidth + 'px';
+
+				if (windowWidht > breackpontPhone && windowWidht < openMenuWidth) {
+					content.style.width = windowWidht - closeMenuWidht + 'px';
+				} else if (windowWidht <= breackpontPhone) {
+					let num;
+					for (let i = 0; i < menuItems.length; i++) {
+						if (menuItems[i] === item) {
+							num = menuItems.length - (i + 1);
+						}
+						menuAcc.style.transform = `translateX(${tarWidth * num}px)`;
+						content.style.width = windowWidht - tarWidth + 'px';
+					}
+				} else {
+					content.style.width = layoutContentWidth + 'px';
+				}
 			}
 		}
 	});
 };
-menuAccordion();
+menuAccordeon();
+
+//модальные окна
+function reviewsOverlay() {
+
+	const openButton = document.querySelector('.reviews__list');
+	const template = document.querySelector('#overlayTemplate').innerHTML;
+	const overlay = createOverlay(template);
+
+
+	openButton.addEventListener('click', event => {
+		event.preventDefault();
+		const target = event.target;
+
+		if (target.classList.contains('btn--reviews')) {
+			overlay.open();
+			overlay.setContent('Константин Спилберг',
+				'Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.');
+		}
+	});
+
+	function createOverlay(template) {
+		let fragment = document.createElement('div');
+
+		fragment.innerHTML = template;
+
+		const overlayElement = fragment.querySelector('.overlay');
+		const headElement = fragment.querySelector('.overlay__head');
+		const contentElement = fragment.querySelector('.overlay__content');
+		const closeElement = fragment.querySelector('.overlay__close');
+
+		fragment = null;
+
+		overlayElement.addEventListener('click', event => {
+			if (event.target === overlayElement) {
+				closeElement.click();
+			}
+		});
+
+		closeElement.addEventListener('click', event => {
+			event.preventDefault();
+			document.body.removeChild(overlayElement);
+		});
+
+		return {
+			open() {
+				document.body.appendChild(overlayElement);
+			},
+			close() {
+				closeElement.click();
+			},
+			setContent(head, content) {
+				headElement.innerHTML = head;
+				contentElement.innerHTML = content;
+			}
+		};
+	};
+};
+reviewsOverlay();
