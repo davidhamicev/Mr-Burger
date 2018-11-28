@@ -203,48 +203,89 @@ function reviewsOverlay() {
 		event.preventDefault();
 		const target = event.target;
 
+		let name = target.parentNode.firstElementChild.textContent;
+		let contentRev = target.parentNode.firstElementChild.nextElementSibling.textContent;
+
 		if (target.classList.contains('btn--reviews')) {
 			overlay.open();
-			overlay.setContent('Константин Спилберг',
-				'Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным. Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.');
+			overlay.setContent(name, contentRev);
+		}
+	});
+};
+reviewsOverlay();
+
+//обработка формы
+function sentFormData() {
+	const myForm = document.querySelector('.form');
+	const sendBtn = document.querySelector('.btn--send');
+
+	sendBtn.addEventListener('click', function (event) {
+		event.preventDefault();
+
+		let url = myForm.getAttribute('action');
+		let method = myForm.getAttribute('method');
+		console.log(url, method, myForm.elements)
+
+		let formData = {
+			name: myForm.elements.name.value,
+			phone: myForm.elements.phone.value,
+			comment: myForm.elements.comment.value,
+			to: 'bigdaddy@gmail.com'
+		}
+
+		const xhr = new XMLHttpRequest();
+		xhr.responseType = 'json';
+		xhr.open(method, url);
+		xhr.send(JSON.stringify(formData));
+
+		xhr.addEventListener('load', () => {
+			overlay.open();
+			if (xhr.status <= 400) {
+				const message = xhr.response.message;
+				overlay.setContent('', message);
+			} else {
+				const message = 'УПС! Ошибочка! Попробуйте снова!';
+				overlay.setContent('', message);
+			}
+		});
+	});
+};
+sentFormData();
+
+//создание модального окна
+function createOverlay(template) {
+	let fragment = document.createElement('div');
+
+	fragment.innerHTML = template;
+
+	const overlayElement = fragment.querySelector('.overlay');
+	const headElement = fragment.querySelector('.overlay__head');
+	const contentElement = fragment.querySelector('.overlay__content');
+	const closeElement = fragment.querySelector('.overlay__close');
+
+	fragment = null;
+
+	overlayElement.addEventListener('click', event => {
+		if (event.target === overlayElement) {
+			closeElement.click();
 		}
 	});
 
-	function createOverlay(template) {
-		let fragment = document.createElement('div');
+	closeElement.addEventListener('click', event => {
+		event.preventDefault();
+		document.body.removeChild(overlayElement);
+	});
 
-		fragment.innerHTML = template;
-
-		const overlayElement = fragment.querySelector('.overlay');
-		const headElement = fragment.querySelector('.overlay__head');
-		const contentElement = fragment.querySelector('.overlay__content');
-		const closeElement = fragment.querySelector('.overlay__close');
-
-		fragment = null;
-
-		overlayElement.addEventListener('click', event => {
-			if (event.target === overlayElement) {
-				closeElement.click();
-			}
-		});
-
-		closeElement.addEventListener('click', event => {
-			event.preventDefault();
-			document.body.removeChild(overlayElement);
-		});
-
-		return {
-			open() {
-				document.body.appendChild(overlayElement);
-			},
-			close() {
-				closeElement.click();
-			},
-			setContent(head, content) {
-				headElement.innerHTML = head;
-				contentElement.innerHTML = content;
-			}
-		};
+	return {
+		open() {
+			document.body.appendChild(overlayElement);
+		},
+		close() {
+			closeElement.click();
+		},
+		setContent(head, content) {
+			headElement.innerHTML = head;
+			contentElement.innerHTML = content;
+		}
 	};
 };
-reviewsOverlay();
