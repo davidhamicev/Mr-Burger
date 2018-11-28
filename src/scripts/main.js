@@ -224,8 +224,8 @@ function sentFormData() {
 
 		let url = myForm.getAttribute('action');
 		let method = myForm.getAttribute('method');
-
 		let formData =  new FormData(myForm);
+		
 		formData.append('name', myForm.elements.name.value);
 		formData.append('phone', myForm.elements.phone.value);
 		formData.append('comment', myForm.elements.comment.value);
