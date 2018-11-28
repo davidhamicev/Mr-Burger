@@ -225,17 +225,16 @@ function sentFormData() {
 		let url = myForm.getAttribute('action');
 		let method = myForm.getAttribute('method');
 
-		let formData = {
-			name: myForm.elements.name.value,
-			phone: myForm.elements.phone.value,
-			comment: myForm.elements.comment.value,
-			to: 'bigdaddy@gmail.com'
-		}
-
+		let formData =  new FormData(myForm);
+		formData.append('name', myForm.elements.name.value);
+		formData.append('phone', myForm.elements.phone.value);
+		formData.appendc('comment', myForm.elements.comment.value);
+		formData.append('to', 'bigdaddy@gmail.com');
+		
 		const xhr = new XMLHttpRequest();
 		xhr.responseType = 'json';
-		xhr.open(method, url);
-		xhr.send(JSON.stringify(formData));
+		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+		xhr.send(formData);
 
 		const overlay = createOverlay(document.querySelector('#overlayTemplate').innerHTML);
 		xhr.addEventListener('load', () => {

@@ -1476,6 +1476,9 @@ a {
     @media (max-width: 768px) {
       .overlay__container {
         font-size: 1.25rem;
+        width: 70%; } }
+    @media (max-width: 480px) {
+      .overlay__container {
         width: 90%; } }
   .overlay__head {
     font-family: 'gagalinregular', Arial, sans-serif;
