@@ -238,6 +238,7 @@ function sentFormData() {
 		xhr.open(method, url);
 		xhr.send(JSON.stringify(formData));
 
+		const overlay = createOverlay(document.querySelector('#overlayTemplate').innerHTML);
 		xhr.addEventListener('load', () => {
 			overlay.open();
 			if (xhr.status <= 400) {
