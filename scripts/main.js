@@ -224,7 +224,6 @@ function sentFormData() {
 
 		let url = myForm.getAttribute('action');
 		let method = myForm.getAttribute('method');
-		console.log(url, method, myForm.elements)
 
 		let formData = {
 			name: myForm.elements.name.value,
@@ -232,12 +231,13 @@ function sentFormData() {
 			comment: myForm.elements.comment.value,
 			to: 'bigdaddy@gmail.com'
 		}
-
+		
 		const xhr = new XMLHttpRequest();
 		xhr.responseType = 'json';
 		xhr.open(method, url);
 		xhr.send(JSON.stringify(formData));
 
+		const overlay = createOverlay(document.querySelector('#overlayTemplate').innerHTML);
 		xhr.addEventListener('load', () => {
 			overlay.open();
 			if (xhr.status <= 400) {
