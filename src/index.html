@@ -862,7 +862,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/1.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Милая Девчушка
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -878,7 +878,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/2.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Брутальный парниша
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -894,7 +894,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/3.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Серьезная Мадам
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -910,7 +910,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/4.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Парень в Кепке
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -926,7 +926,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/5.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Серьезный Мальчуган
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -942,7 +942,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/6.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Ушла в Себя
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -958,7 +958,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/7.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Добрый Дедуля
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -974,7 +974,7 @@
 					<li class="reviews__item" style="background-image: url(./images/content/photo-reviews/8.jpg);">
 						<div class="reviews__hover">
 							<h4 class="reviews__head">
-								Константин Спилберг
+								Бородатый дядь
 							</h4>
 							<div class="reviews__text">
 								<p>
@@ -995,22 +995,22 @@
 					<h2 class="section-title section-title_yellow section-title_center">
 						Закажите доставку
 					</h2>
-					<form class="form" action="#" method="POST">
+					<form class="form" action="https://webdev-api.loftschool.com/sendmail" method="POST">
 						<div class="form__column">
 							<div class="form__row">
 								<label class="form__block">
 									<div class="form__title">Имя</div>
-									<input type="text" class="form__input">
+									<input type="text" class="form__input" name="name">
 								</label>
 								<label class="form__block">
 									<div class="form__title">Телефон</div>
-									<input type="phone" class="form__input" placeholder="89212264923">
+									<input type="phone" class="form__input" name="phone" placeholder="89212264923">
 								</label>
 							</div>
 							<div class="form__row">
 								<label class="form__block">
 									<div class="form__title">Улица</div>
-									<input type="text" class="form__input">
+									<input type="text" class="form__input" name="street">
 								</label>
 							</div>
 							<div class="form__row">
@@ -1037,19 +1037,19 @@
 							<div class="form__row">
 								<label class="form__block">
 									<div class="form__title">Комментарий</div>
-									<textarea name="" id="" class="form__input form__textarea"></textarea>
+									<textarea name="comment" class="form__input form__textarea"></textarea>
 								</label>
 							</div>
 							<div class="form__buttons">
 								<div class="form__row">
 									<div class="form__radios">
 										<label class="form__radio">
-											<input type="radio" class="form__radio--icon" name='paymant'>
+											<input type="radio" class="form__radio--icon" name='paymant' value="cash">
 											<span class="form__radio--icon--custom"></span>
 											<div class="form__text">Потребуется сдача</div>
 										</label>
 										<label class="form__radio">
-											<input type="radio" name='paymant' class="form__radio--icon" checked>
+											<input type="radio" name='paymant' class="form__radio--icon" value="card" checked>
 											<span class="form__radio--icon--custom"></span>
 											<div class="form__text">Оплата по карте</div>
 										</label>
@@ -1057,7 +1057,7 @@
 								</div>
 								<div class="form__row">
 									<label class="form__check">
-										<input type="checkbox" class="form__check--icon">
+										<input type="checkbox" class="form__check--icon" name="call">
 										<span class="form__check--icon--custom"></span>
 										<div class="form__text">
 											Не перезванивать
@@ -1065,7 +1065,7 @@
 									</label>
 								</div>
 								<div class="form__row">
-									<a href="#" class="btn btn--order">Заказать</a>
+									<button class="btn btn--order btn--send">Заказать</button>
 									<button type="reset" class="btn btn--clean">Очистить</button>
 								</div>
 							</div>

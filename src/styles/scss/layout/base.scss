@@ -114,6 +114,10 @@ a {
 
 	&--order {
 		background: #e45028;
+		border: none;
+		outline: none;
+		color: #fff;
+		cursor: pointer;
 
 		&:hover {
 			background: #c1401e;
