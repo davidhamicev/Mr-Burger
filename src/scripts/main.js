@@ -228,7 +228,7 @@ function sentFormData() {
 		let formData =  new FormData(myForm);
 		formData.append('name', myForm.elements.name.value);
 		formData.append('phone', myForm.elements.phone.value);
-		formData.appendc('comment', myForm.elements.comment.value);
+		formData.append('comment', myForm.elements.comment.value);
 		formData.append('to', 'bigdaddy@gmail.com');
 		
 		const xhr = new XMLHttpRequest();
