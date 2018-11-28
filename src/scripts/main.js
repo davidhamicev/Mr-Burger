@@ -231,7 +231,7 @@ function sentFormData() {
 			comment: myForm.elements.comment.value,
 			to: 'bigdaddy@gmail.com'
 		}
-		
+
 		const xhr = new XMLHttpRequest();
 		xhr.responseType = 'json';
 		xhr.open(method, url);
@@ -241,7 +241,7 @@ function sentFormData() {
 		xhr.addEventListener('load', () => {
 			overlay.open();
 			if (xhr.status <= 400) {
-				const message = xhr.response.message;
+				const message = 'Ваши данные отправлены! Ожидайте звонка!';
 				overlay.setContent('', message);
 			} else {
 				const message = 'УПС! Ошибочка! Попробуйте снова!';
