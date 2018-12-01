@@ -1,0 +1,69 @@
+.work {
+	background: url(../images/bg/work-bg.jpg) center center / cover no-repeat;
+}
+
+.player {
+	position: relative;
+	text-align: center;
+	margin-top: 50px;
+	width: 660px;
+	height: 405px;
+
+	&__controls {
+		position: absolute;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		left: 0;
+		bottom: 0;
+		height: 35Px;
+		background: #3e3e3e;
+		width: 100%;
+		padding: 7Px 20Px;
+	}
+
+	&__start {
+		width: 16Px;
+		height: 22Px;
+		display: flex;
+
+		&-btn {
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+			border: none;
+			background-image: url('../images/svgicons/play.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			outline: none;
+			cursor: pointer;
+		}
+
+		&-off {
+			.player__start-btn {
+				display: none;
+			}
+
+			&.player__start {
+				&::before,
+				&::after {
+					content: '';
+					display: block;
+					width: 4Px;
+					height: 16Px;
+					background-color: #626262;
+					margin-right: 2px;
+				}
+			}
+		}
+	}
+
+	&__playback-button {
+		width: 12Px;
+		height: 12Px;
+		background: #626262;
+		border-radius: 50%;
+	}
+}

@@ -9,13 +9,15 @@
 	<link rel="shortcut icon" href="images/svgicons/title-burger.ico" type="image/ico">
 	<link rel="stylesheet" href="styles/found/normalize.css">
 	<link rel="stylesheet" href="styles/main.css">
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=da64e742-f2f1-45e6-ac0a-8ddbb8dc07c1&lang=ru_RU" type="text/javascript">
+	</script>
 </head>
 
 <body>
 	<div class="wrapper">
 		<div class="maincontent">
 
-			<section class="section hero">
+			<section class="section hero is-active">
 				<div class="container container--hero">
 					<header class="header">
 						<a href="#" class="logo">
@@ -44,7 +46,7 @@
 									<li class="nav__item" data-scroll-to="6">
 										<a href="#" class="nav__link" title="Как мы работаем">Как мы рабоатем</a>
 									</li>
-									<li class="nav__item" data-scroll-to="7">
+									<li class="nav__item" data-scroll-to="8">
 										<a href="#" class="nav__link" title="Контакты">Контакты</a>
 									</li>
 								</ul>
@@ -159,7 +161,7 @@
 													<span class="burger__price-cost">500</span>
 													<span class="burger__price-text">рублей</span>
 												</div>
-												<a href="#" class="btn btn--order">Заказать</a>
+												<a href="#" class="btn btn--order" data-scroll-to="7">Заказать</a>
 											</div>
 										</div>
 										<div class="burger__note burger__note--consist">
@@ -267,7 +269,7 @@
 													<span class="burger__price-cost">500</span>
 													<span class="burger__price-text">рублей</span>
 												</div>
-												<a href="#" class="btn btn--order">Заказать</a>
+												<a href="#" class="btn btn--order" data-scroll-to="7">Заказать</a>
 											</div>
 										</div>
 										<div class="burger__note burger__note--consist">
@@ -375,7 +377,7 @@
 													<span class="burger__price-cost">500</span>
 													<span class="burger__price-text">рублей</span>
 												</div>
-												<a href="#" class="btn btn--order">Заказать</a>
+												<a href="#" class="btn btn--order" data-scroll-to="7">Заказать</a>
 											</div>
 										</div>
 										<div class="burger__note burger__note--consist">
@@ -482,7 +484,7 @@
 													<span class="burger__price-cost">500</span>
 													<span class="burger__price-text">рублей</span>
 												</div>
-												<a href="#" class="btn btn--order">Заказать</a>
+												<a href="#" class="btn btn--order" data-scroll-to="7">Заказать</a>
 											</div>
 										</div>
 										<div class="burger__note burger__note--consist">
@@ -589,7 +591,7 @@
 													<span class="burger__price-cost">500</span>
 													<span class="burger__price-text">рублей</span>
 												</div>
-												<a href="#" class="btn btn--order">Заказать</a>
+												<a href="#" class="btn btn--order" data-scroll-to="7">Заказать</a>
 											</div>
 										</div>
 										<div class="burger__note burger__note--consist">
@@ -990,6 +992,31 @@
 				</ul>
 			</section>
 
+			<section class="section work">
+				<div class="container">
+					<h2 class="section-title section-title_center">
+						Как мы работаем
+					</h2>
+					<div class="player">
+						<video class="player-film" width="100%" height="100%">
+							<source src="images/video.mp4" type="video/mp4">
+						</video>
+						<div class="player__controls">
+							<div class="player__start">
+								<button class="player__start-btn"></button>
+							</div>
+							<div class="player__playback">
+								<button class="player__playback-button"></button>
+							</div>
+							<div class="player__duration">
+								<span class="player__duration-compleated">0:00</span>
+								<span class="player__duration-allTime">0:00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="section order">
 				<div class="container">
 					<h2 class="section-title section-title_yellow section-title_center">
@@ -1075,7 +1102,8 @@
 			</section>
 
 			<section class="section contacts">
-
+				<div id="map">
+				</div>
 				<footer class="footer">
 					<div class="container container--footer">
 						<div class="foot">
@@ -1142,15 +1170,15 @@
 	<div class="pagination">
 
 		<ul class="pagination__list">
-			<li class="pagination__item is-activ"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
-			<li class="pagination__item"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item is-active" data-scroll-to="0"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="1"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="2"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="3"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="4"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="5"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="6"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="7"><a href="#" class="pagination__link"></a></li>
+			<li class="pagination__item" data-scroll-to="8"><a href="#" class="pagination__link"></a></li>
 		</ul>
 	</div>
 
@@ -1182,10 +1210,13 @@
 					<a href="#" class="nav-mobile__link" data-scroll-to="5">Отзывы</a>
 				</li>
 				<li class="nav-mobile__item">
-					<a href="#" class="nav-mobile__link" data-scroll-to="6">Заказать</a>
+					<a href="#" class="nav-mobile__link" data-scroll-to="6">Как мы работаем</a>
 				</li>
 				<li class="nav-mobile__item">
-					<a href="#" class="nav-mobile__link" data-scroll-to="7">Контакты</a>
+					<a href="#" class="nav-mobile__link" data-scroll-to="7">Заказать</a>
+				</li>
+				<li class="nav-mobile__item">
+					<a href="#" class="nav-mobile__link" data-scroll-to="8">Контакты</a>
 				</li>
 			</ul>
 		</nav>
@@ -1196,7 +1227,7 @@
 			<img src="images/logo/logo.svg" alt="logo" class="logo__img">
 		</a>
 	</div> -->
-	
+
 	<script type="template" id="overlayTemplate">
 		<div class="overlay">
 			<div class="overlay__container">
