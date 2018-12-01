@@ -72,7 +72,6 @@ function slider() {
 };
 slider();
 
-
 //всплывающее меню слайдера
 function showConsist() {
 	const consists = document.querySelectorAll('.burger__note--consist'); //блочок с бургером
@@ -224,13 +223,13 @@ function sentFormData() {
 
 		let url = myForm.getAttribute('action');
 		let method = myForm.getAttribute('method');
-		let formData =  new FormData(myForm);
+		let formData = new FormData(myForm);
 
 		formData.append('name', myForm.elements.name.value);
 		formData.append('phone', myForm.elements.phone.value);
 		formData.append('comment', myForm.elements.comment.value);
 		formData.append('to', 'bigdaddy@gmail.com');
-		
+
 		const xhr = new XMLHttpRequest();
 		xhr.responseType = 'json';
 		xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
@@ -250,6 +249,72 @@ function sentFormData() {
 	});
 };
 sentFormData();
+
+//карты
+function initMap() {
+	ymaps.ready(init);
+
+	const markImage = '../images/svgicons/map-marker.svg';
+
+	function init() {
+		let myMap = new ymaps.Map('map', {
+				center: [59.925651, 30.395737],
+				zoom: 11
+			}),
+
+			// Создаём макет содержимого.
+			// MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+			// 	'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+			// ),
+			myPlacemarks = [
+				new ymaps.Placemark([59.915025, 30.486548], {
+					hintContent: 'Наш адрес',
+					balloonContentHeader: 'Мы ждем Вас',
+					balloonContent: 'Товарищеский проспект, 20/27',
+					balloonContentFooter: 'Приходите к нам'
+				}, {
+					iconLayout: 'default#image',
+					iconImageHref: markImage,
+					iconImageSize: [46, 57]
+				}),
+				new ymaps.Placemark([59.891259, 30.316892], {
+					hintContent: 'Наш адрес',
+					balloonContentHeader: 'Мы ждем Вас',
+					balloonContent: 'Московский проспект, 103к2',
+					balloonContentFooter: 'Приходите к нам'
+				}, {
+					iconLayout: 'default#image',
+					iconImageHref: markImage,
+					iconImageSize: [46, 57]
+				}),
+				new ymaps.Placemark([59.947041, 30.385038], {
+					hintContent: 'Наш адрес',
+					balloonContentHeader: 'Мы ждем Вас',
+					balloonContent: 'Тверская улица, 16',
+					balloonContentFooter: 'Приходите к нам'
+				}, {
+					iconLayout: 'default#image',
+					iconImageHref: markImage,
+					iconImageSize: [46, 57]
+				}),
+				new ymaps.Placemark([59.973568, 30.311278], {
+					hintContent: 'Наш адрес',
+					balloonContentHeader: 'Мы ждем Вас',
+					balloonContent: 'улица Чапыгина, 13А',
+					balloonContentFooter: 'Приходите к нам'
+				}, {
+					iconLayout: 'default#image',
+					iconImageHref: markImage,
+					iconImageSize: [46, 57]
+				})
+			]
+
+		for (const mark of myPlacemarks) {
+			myMap.geoObjects.add(mark);
+		}
+	}
+};
+initMap();
 
 //создание модального окна
 function createOverlay(template) {
@@ -288,3 +353,179 @@ function createOverlay(template) {
 		}
 	};
 };
+
+//onePageScroll
+function pageScroll() {
+	const wrapper = document.querySelector('.wrapper');
+	const content = wrapper.querySelector('.maincontent');
+	const sections = content.querySelectorAll('.section');
+	const points = document.querySelectorAll('.pagination__item');
+	const dataScrollto = document.querySelectorAll('[data-scroll-to]');
+
+	let isScroll = false;
+
+	addNavigation();
+	wheel();
+	keyPush();
+
+	function moveToPage(numSection) {
+		const position = `${numSection * -100}%`;
+
+		if (isScroll) return;
+
+		isScroll = true;
+
+		addClass(sections);
+
+		content.style.transform = `translateY(${position})`;
+
+		setTimeout(() => {
+			isScroll = false;
+			addClass(points);
+		}, 1000);
+
+		function addClass(array) {
+			array[numSection].classList.add('is-active');
+			for (const iterator of array) {
+				if (iterator !== array[numSection]) {
+					iterator.classList.remove('is-active');
+				}
+			}
+		}
+	}
+
+	function addNavigation() {
+		for (const iterator of dataScrollto) {
+			iterator.addEventListener('click', e => {
+				e.preventDefault();
+				moveToPage(iterator.dataset.scrollTo);
+			});
+		}
+	}
+
+	function wheel() {
+		document.addEventListener('wheel', e => {
+			const direct = e.deltaY > 0 ? 'up' : 'down';
+			scrollToPage(direct);
+		})
+	}
+
+	function defineSection(array) {
+		for (let i = 0; i < array.length; i++) {
+			const element = array[i];
+
+			if (element.classList.contains('is-active')) {
+				return {
+					elIndex: i,
+					elActive: element,
+					elNext: element.nextElementSibling,
+					elPrev: element.previousElementSibling
+				};
+			}
+		}
+	}
+
+	function scrollToPage(direct) {
+		let section = defineSection(sections);
+
+		if (direct === 'up' && section.elNext) {
+			let numSection = section.elIndex + 1;
+			moveToPage(numSection);
+		}
+
+		if (direct === 'down' && section.elPrev) {
+			let numSection = section.elIndex - 1;
+			moveToPage(numSection);
+		}
+	}
+
+	function keyPush() {
+		document.addEventListener('keydown', e => {
+			switch (e.keyCode) {
+				case 40:
+					scrollToPage('up');
+					break;
+				case 38:
+					scrollToPage('down');
+					break;
+			}
+		});
+	}
+
+	var isMobileDevice = {
+		Android: function () {
+			return navigator.userAgent.match(/Android/i);
+		},
+		BlackBerry: function () {
+			return navigator.userAgent.match(/BlackBerry/i);
+		},
+		iOS: function () {
+			return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+		},
+		Opera: function () {
+			return navigator.userAgent.match(/Opera Mini/i);
+		},
+		Windows: function () {
+			return navigator.userAgent.match(/IEMobile/i);
+		},
+		any: function () {
+			return (isMobileDevice.Android() || isMobileDevice.BlackBerry() || isMobileDevice.iOS() || isMobileDevice.Opera() || isMobileDevice.Windows());
+		}
+	};
+
+	if (isMobileDevice.any()) {
+		swipe();
+	}
+
+	function swipe() {
+		let touchStartY = 0;
+		let touchEndY = 0;
+
+		document.addEventListener('touchstart', e => {
+				touchStartY = e.changedTouches[0].screenY;
+			},
+			false
+		);
+
+		wrapper.addEventListener('touchmove', e => e.preventDefault());
+
+		document.addEventListener(
+			'touchend',
+			e => {
+				touchEndY = e.changedTouches[0].screenY;
+				let direct = swipeDirect();
+				scrollToPage(direct);
+			},
+			false
+		);
+
+		function swipeDirect() {
+			let dif = touchStartY - touchEndY;
+			if (dif > 100) {
+				return 'up';
+			} else if (dif < -100) {
+				return 'down';
+			}
+		}
+	}
+};
+pageScroll();
+
+//Секция с видео
+function moveVideo() {
+	const videoElement = document.querySelector('video');
+	const playBytton = document.querySelector('.player__start');
+
+	playBytton.addEventListener('click', e => {
+		e.preventDefault();
+
+		if (videoElement.paused) {
+			videoElement.play();
+			playBytton.classList.add('player__start-off')
+		} else {
+			videoElement.pause();
+			playBytton.classList.remove('player__start-off')
+		}
+	})
+};
+moveVideo();
