@@ -253,7 +253,7 @@ sentFormData();
 function initMap() {
 	ymaps.ready(init);
 
-	const markImage = 'images/svgicons/map-marker.svg';
+	const markImage = '..images/svgicons/map-marker.svg';
 
 	function init() {
 		let myMap = new ymaps.Map('map', {
