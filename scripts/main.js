@@ -262,10 +262,6 @@ function initMap() {
 				zoom: 11
 			}),
 
-			// Создаём макет содержимого.
-			// MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-			// 	'<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-			// ),
 			myPlacemarks = [
 				new ymaps.Placemark([59.915025, 30.486548], {
 					hintContent: 'Наш адрес',
@@ -515,17 +511,42 @@ pageScroll();
 function moveVideo() {
 	const videoElement = document.querySelector('video');
 	const playBytton = document.querySelector('.player__start');
-
+	const panelScroll = document.querySelector('.player__playback');
+	const buttonScroll = document.querySelector('.player__playback-button');
+	let duration;
 	playBytton.addEventListener('click', e => {
 		e.preventDefault();
+		duration = videoElement.duration;
+		let interval;
 
 		if (videoElement.paused) {
 			videoElement.play();
-			playBytton.classList.add('player__start-off')
+			playBytton.classList.add('paused')
 		} else {
 			videoElement.pause();
-			playBytton.classList.remove('player__start-off')
+			playBytton.classList.remove('paused')
 		}
+
+		clearInterval(interval);
+		interval = setInterval(() => {
+			const completed = videoElement.currentTime;
+			const percent = (completed / duration) * 100;
+			changePositionPersent(percent);
+		}, 1000);
+	});
+
+	panelScroll.addEventListener('click', e => {
+		const newButtonPosition = e.pageX - panelScroll.getBoundingClientRect().left;
+		const panelScrollWidth = panelScroll.getBoundingClientRect().width;
+		const clickedPercent = (newButtonPosition / panelScrollWidth) * 100;
+		const newPlayerTime = (duration / 100) * clickedPercent;
+
+		videoElement.currentTime = newPlayerTime;
+		changePositionPersent(clickedPercent);
 	})
+
+	function changePositionPersent(percent) {
+		buttonScroll.style.left = `${percent}%`;
+	}
 };
 moveVideo();
