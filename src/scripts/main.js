@@ -249,7 +249,6 @@ function sentFormData() {
 	});
 };
 sentFormData();
-
 //карты
 function initMap() {
 	ymaps.ready(init);
