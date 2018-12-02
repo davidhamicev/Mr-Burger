@@ -47,9 +47,15 @@ img {
 
 button {
 	margin: 0;
-	height: 0;
-	border: none;
 	padding: 0;
+	border: none;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	width: 100%;
+	clear: both;
 }
 
 footer {
